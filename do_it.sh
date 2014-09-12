@@ -1,6 +1,9 @@
 #!/bin/bash
 export DISPLAY=:0
 xhost +
+setterm -blank 0
+setterm -powersave off
+xset -dpms
 
 date >> /tmp/monitor
 
@@ -24,4 +27,4 @@ cd ~/dimo-input
 python server.py &
 
 # launch browser
-google-chrome file:///home/dimo/current_demo/index.html
+google-chrome file:///home/dimo/current_demo/index.html &
