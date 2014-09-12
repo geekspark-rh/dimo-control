@@ -1,4 +1,8 @@
 #!/bin/bash
+export DISPLAY=:0
+xhost +
+
+date >> /tmp/monitor
 
 function kill_stuff() {
     for var in chrome google-chrome python node nodejs screen
