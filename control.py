@@ -21,7 +21,7 @@ demos_dir    = '/home/dimo/demos/'
 current_file = '/tmp/current_demo'
 
 if not os.path.isfile(current_file):
-    for dir in os.listdir(renderers):
+    for dir in os.listdir(demos_dir):
         print "No renderer currently running... starting with " + dir
         write_current_demo(dir)
         break
@@ -33,7 +33,8 @@ with open(current_file, "r") as file:
 
 demos = {}
 for dir in os.listdir(demos_dir):
-    about_file = demos_dir + dir + "/about.html"
+    about_file = demos_dir + dir + "/run/about.html"
+    print "ABOUT: " + about_file
     if os.path.isfile(about_file):
         demos[dir] = {}
         demos[dir]['name'] = dir
@@ -52,3 +53,6 @@ except:
     print "foo"
     
 os.symlink(demo['path'], current_dir)
+
+
+print "XOMG " + current_dir + " " + demo['path'] 

@@ -27,4 +27,4 @@ cd ~/dimo-input
 python server.py &
 
 # launch browser
-google-chrome file:///home/dimo/current_demo/index.html &
+google-chrome http://localhost/demo/index.html &
